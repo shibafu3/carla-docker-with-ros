@@ -19,4 +19,4 @@ RUN echo "source /opt/carla-ros-bridge/melodic/setup.bash" >> ~/.bashrc
 # DockerFileのRUNやCMDはbashではなくてshなのでsourceコマンドがないため, このように /bin/bash -sc "" と書く
 # /bin/bash を使うとDockerFile内の変数は使えないっぽい
 # docker run 時に locakhost を ホストのIPに変換してるはずなのにうまく機能しないため host:= で指定する
-CMD /bin/bash -c "source /opt/ros/melodic/setup.bash ; source /opt/carla-ros-bridge/melodic/setup.bash ; roslaunch carla_ros_bridge carla_ros_bridge.launch"
+CMD /bin/bash -c "source /opt/ros/melodic/setup.bash ; source /opt/carla-ros-bridge/melodic/setup.bash ; roslaunch carla_ros_bridge carla_ros_bridge.launch host=:localhost"
